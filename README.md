@@ -1,7 +1,7 @@
 BitcoinLib
 ==========
 
-**C# Bitcoin, Litecoin, Dogecoin and Bitcoin-Clones Library & RPC Wrapper**
+**C# Bitcoin, Litecoin, Gamerscoin, Dogecoin and Bitcoin-Clones Library & RPC Wrapper**
 
 Features
 --------
@@ -44,16 +44,19 @@ Instructions for Bitcoin
 - You're good to go.
 
 
-Instructions for Litecoin and other Bitcoin clones
+Instructions for Litecoin Gamerscoin and other Bitcoin clones
 --------------------------------------------------
 
 - Perform the same steps as those mentioned above for Bitcoin.
 
 - Litecoin configuration file is: `litecoin.conf` under: `%AppData%\Roaming\Litecoin` and its daemon is: `litecoind`.
 
+- Gamerscoin configuration file is: `gamerscoin.conf` under: `%AppData%\Roaming\Gamerscoin` and its daemon is: `gamerscoind`.
+
 - Each coin can be initialized by its own interface specification:
 	- `IBitcoinService BitcoinService = new BitcoinService();` 
-	- `ILitecoinService LitecoinService = new LitecoinService();` 
+	- `ILitecoinService LitecoinService = new LitecoinService();`
+    - `IGamerscoinService GamerscoinService = new GamerscoinService();`	
 
 - Any bitcoin clone can be adopted without any further installation steps with the use of the generic `ICryptocoinService`:
 	- `ICryptocoinService cryptocoinService = new CryptocoinService("daemonUrl", "rpcUsername", "rpcPassword", "walletPassword");`

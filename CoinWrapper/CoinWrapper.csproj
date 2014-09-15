@@ -48,6 +48,8 @@
     <Compile Include="CoinParameters\Base\ICoinParameters.cs" />
     <Compile Include="CoinParameters\Litecoin\ILitecoinConstants.cs" />
     <Compile Include="CoinParameters\Litecoin\LitecoinConstants.cs" />
+	<Compile Include="CoinParameters\Gamerscoin\IGamerscoinConstants.cs" />
+    <Compile Include="CoinParameters\Gamerscoin\GamerscoinConstants.cs" />
     <Compile Include="ExtensionMethods\DecimalExtensionMethods.cs" />
     <Compile Include="Requests\AddNode\NodeAction.cs" />
     <Compile Include="Auxiliary\UnixTime.cs" />
@@ -103,6 +105,8 @@
     <Compile Include="Services\Coins\Cryptocoin\ICryptocoinService.cs" />
     <Compile Include="Services\Coins\Litecoin\ILitecoinService.cs" />
     <Compile Include="Services\Coins\Litecoin\LitecoinService.cs" />
+	<Compile Include="Services\Coins\Gamerscoin\IGamerscoinService.cs" />
+    <Compile Include="Services\Coins\Gamerscoin\GamerscoinService.cs" />
     <Compile Include="Services\RpcServices\RpcService\RpcService.cs" />
     <Compile Include="Services\RpcServices\RpcExtenderService\RpcExtenderService.cs" />
     <Compile Include="Services\RpcServices\RpcService\IRpcService.cs" />

@@ -8,6 +8,7 @@ using BitcoinLib.Services.Coins.Base;
 using BitcoinLib.Services.Coins.Bitcoin;
 using BitcoinLib.Services.Coins.Cryptocoin;
 using BitcoinLib.Services.Coins.Litecoin;
+using BitcoinLib.Services.Coins.Gamerscoin;
 
 namespace BitcoinLib.Services
 {
@@ -96,6 +97,38 @@ namespace BitcoinLib.Services
                     BlockMaximumSizeInBytes = 250000;
 
                     BaseUnitName = "Litetoshi";
+                    BaseUnitsPerCoin = 100000000;
+                    CoinsPerBaseUnit = 0.00000001M;
+                }
+				else if (coinService is GamerscoinService)
+                {
+                    DaemonUrl = ConfigurationManager.AppSettings.Get("Gamerscoin_DaemonUrl");
+                    DaemonUrlTestnet = ConfigurationManager.AppSettings.Get("Gamerscoin_DaemonUrl_Testnet");
+                    RpcUsername = ConfigurationManager.AppSettings.Get("Gamerscoin_RpcUsername");
+                    RpcPassword = ConfigurationManager.AppSettings.Get("Gamerscoin_RpcPassword");
+                    WalletPassword = ConfigurationManager.AppSettings.Get("Gamerscoin_WalletPassword");
+
+                    CoinShortName = "GMC";
+                    CoinLongName = "Gamerscoin";
+                    IsoCurrencyCode = "XGM";
+
+                    TransactionSizeBytesContributedByEachInput = 148;
+                    TransactionSizeBytesContributedByEachOutput = 34;
+                    TransactionSizeFixedExtraSizeInBytes = 10;
+
+                    FreeTransactionMaximumSizeInBytes = 5000;
+                    FreeTransactionMinimumOutputAmountInCoins = 0.001M;
+                    FreeTransactionMinimumPriority = 230400000;
+                    FeePerThousandBytesInCoins = 0.001M;
+                    MinimumTransactionFeeInCoins = 0.001M;
+                    MinimumNonDustTransactionAmountInCoins = 0.001M;
+
+                    TotalCoinSupplyInCoins = 84000000;
+                    EstimatedBlockGenerationTimeInMinutes = 2.5;
+                    BlocksHighestPriorityTransactionsReservedSizeInBytes = 16000;
+                    BlockMaximumSizeInBytes = 250000;
+
+                    BaseUnitName = "Gamerstoshi";
                     BaseUnitsPerCoin = 100000000;
                     CoinsPerBaseUnit = 0.00000001M;
                 }
