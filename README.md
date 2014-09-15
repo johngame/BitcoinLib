@@ -1,12 +1,15 @@
 BitcoinLib
 ==========
 
+[![tip for next commit](http://game4commit.gamers-coin.org/projects/20.svg)](http://game4commit.gamers-coin.org/projects/20)
+
+![Gamerscoin](https://raw.githubusercontent.com/gamers-coin/gamers-coinv3/01d1ca6d63b565ea46dcee3b6552b030d57d1187/src/qt/res/icons/bitcoin.png)![Gamerscoin](http://i.imgur.com/Nfb8DQx.png)
+
 **C# Bitcoin, Litecoin, Gamerscoin, Dogecoin and Bitcoin-Clones Library & RPC Wrapper**
 
 Features
 --------
 
-- Fully compatible and up-to-date with Bitcoin 0.9.2 RPC API.
 - Design-by-contract, service-oriented architecture.
 - Strongly-typed structures for complex RPC requests and responses.
 - Implicit JSON casting for all RPC messages.
@@ -26,47 +29,22 @@ Features
 - Fully configurable.
 
 
-Instructions for Bitcoin
+Instructions for Gamerscoin
 ------------------------
 
-- Locate your `bitcoin.conf` file (in Windows it's under: `%AppData%\Roaming\Bitcoin`, if it's not there just go ahead and create it) and add these lines:
+- Locate your `gamerscoin.conf` file (in Windows it's under: `%AppData%\Roaming\gamerscoin`, if it's not there just go ahead and create it) and add these lines:
 	- rpcuser = MyRpcUsername
 	- rpcpassword = MyRpcPassword
 	- server=1
 	- txindex=1
 
-- Call `bitcoind -reindex -txindex -debug=net -printtoconsole` and wait until it's finished re-indexing (it might take a while). Append `-testnet` if you want to run it for Testnet. You need to do this just once.
+- Call `gamerscoind -reindex -txindex -debug=net -printtoconsole` and wait until it's finished re-indexing (it might take a while). Append `-testnet` if you want to run it for Testnet. You need to do this just once.
 
-- Shut down bitcoind and run it again with these arguments: `bitcoind -daemon -debug=net -printtoconsole`. Append `-testnet` if you want to run it for Testnet. Wait until it is fully synchronized. 
+- Shut down gamerscoind and run it again with these arguments: `gamerscoind -daemon -debug=net -printtoconsole`. Append `-testnet` if you want to run it for Testnet. Wait until it is fully synchronized. 
 
-- Edit the `app.config` file in the Console test client to best fit your needs. Make sure you also update the `bitcoin.conf` when you alter the `Bitcoin_RpcUsername` and `Bitcoin_RpcPassword` parameters.
+- Edit the `app.config` file in the Console test client to best fit your needs. Make sure you also update the `gamerscoin.conf` when you alter the `Gamerscoin_RpcUsername` and `Gamerscoin_RpcPassword` parameters.
 
 - You're good to go.
-
-
-Instructions for Litecoin Gamerscoin and other Bitcoin clones
---------------------------------------------------
-
-- Perform the same steps as those mentioned above for Bitcoin.
-
-- Litecoin configuration file is: `litecoin.conf` under: `%AppData%\Roaming\Litecoin` and its daemon is: `litecoind`.
-
-- Gamerscoin configuration file is: `gamerscoin.conf` under: `%AppData%\Roaming\Gamerscoin` and its daemon is: `gamerscoind`.
-
-- Each coin can be initialized by its own interface specification:
-	- `IBitcoinService BitcoinService = new BitcoinService();` 
-	- `ILitecoinService LitecoinService = new LitecoinService();`
-    - `IGamerscoinService GamerscoinService = new GamerscoinService();`	
-
-- Any bitcoin clone can be adopted without any further installation steps with the use of the generic `ICryptocoinService`:
-	- `ICryptocoinService cryptocoinService = new CryptocoinService("daemonUrl", "rpcUsername", "rpcPassword", "walletPassword");`
-
-- Use `(ICryptocoinService).Parameters` to fully configure each coin pointer at run-time. 
-
-
-Web Test Client
----------------
-The web test client is not maintained anymore. The latest operating version can be found [here](https://github.com/GeorgeKimionis/BitcoinLib-TestClient-Web).
 
 
 License
